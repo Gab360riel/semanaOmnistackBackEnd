@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const cors = require('cors');
 
@@ -33,7 +34,7 @@ app.use((req, res, next) =>{
 
     return next();
 });
-
+app.use(bodyParser.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(express.json());
 app.use(routes);
