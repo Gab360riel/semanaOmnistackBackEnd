@@ -10,9 +10,7 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-const connectedUsers = {
-
-}
+const connectedUsers = {}
 
 io.on('connection', socket =>{
     const {user} = socket.handshake.query;
